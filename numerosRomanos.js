@@ -5,8 +5,7 @@ let vidas = 3,
 
 intentos.innerHTML = `Intentos: ${totalIntentos} - Puntos: ${puntos}`
 
-const startgame = () => {console.log("hola puto")};
-document.getElementById("prueba").onclick = () => { startgame()}
+
 
 
 const check = () => {
