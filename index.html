@@ -4,29 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Juego Romano</title>
     <link rel="stylesheet" href="index.css">
-    
 </head>
 <body>
-  <div id="inicio">
-     <button id="show" type="button" onclick="ocultar()">Ocultar </button>
-  </div>
- <!--  -->
-  <div id="primerB">
-    <p id="demo">Start</p>
-    <button id="reset" type="button" onclick="myFunction()">Try it</button>
-  </div>
-<!--  -->
-<input id="id1" type="number" min="1" max="10">
-<button onclick="lista()">Agregar uno a la lista </button>
-<button onclick="borrarLista()">Borrar todos </button>
-<div id="link" >
-</div>
-
-<!--  <p id="final"></p> -->
+    <header>
+        <h1> Roman Number Game</h1>
+    </header>
+    <div>
+        <h1 id="NumReal">Get ready!</h1>
+        <input type="text" name="" id="NumText">
+        <button type="submit" onclick= "check()" id="game">Start Game</button>
+        <h2 id="intentos"></h2>
+    </div>
+    <div id="tabla">
+    </div>
+    <button id="prueba">Aqui</button>
     <script src="app.js"></script>
 </body>
 </html>
-
-

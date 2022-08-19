@@ -1,65 +1,54 @@
-// Ocultar mostrar contenido
-const ocultar = () => {
-div1 = document.getElementById("primerB");
-botton = document.getElementById("show");
-if(botton.innerHTML !== "Mostrar"){ 
-    div1.style.display = "none";
-    botton.innerHTML = "Mostrar";
-} else { 
-  div1.style.display = "";
-  botton.innerHTML = "Ocultar";
-  }
-}
+import   convertToRoman from './NumRomConverter'
 
-const myFunction = () => {
-let demo = document.getElementById("demo");
-if(typeof count === "undefined") { count = 0 };
-//
-if (count < 5) { 
-    demo.innerHTML = "Contador" + " " + count;
-    document.getElementById("reset").innerHTML = "Add 1";
-    count ++;
-    if (count === 5) {
-         document.getElementById("reset").innerHTML = "Reset";
-       }
-} else {
-    document.getElementById("demo").innerHTML = "Start";
-    document.getElementById("reset").innerHTML = "Add 1"
-    count = 0
-}
-}
+let vidas = 3,
+    totalIntentos = 10,
+    puntos = 0,
+    intentos = document.getElementById("intentos");
 
-const lista = () => {
-const valor = document.getElementById("id1").value;    
-const para = document.createElement("p");
-document.getElementById("id1").value = "";
-//
-para.setAttribute("class", `seleccion ${valor}`);
-para.innerHTML = para.className;
+intentos.innerHTML = `Intentos: ${totalIntentos} - Puntos: ${puntos}`
 
-//
-const bottonDelete = document.createElement("button");
-bottonDelete.innerHTML = "Delete";  
-// bottonDelete.value = count;
-document.getElementById("link")
-        .appendChild(para)
-        .appendChild(bottonDelete);
-console.log(para.attributes);
+const startgame = () => {console.log("hola puto")};
+document.getElementById("prueba").onclick = () => { startgame()}
 
-bottonDelete.onclick = () => { 
-   para.remove();
-   bottonDelete.remove()
-   } 
+
+const check = () => {
+// start game
+if(document.getElementById("game").innerHTML === "Start Game"){
+  document.getElementById("NumReal").innerHTML = Math.floor(Math.random() * 40) + 1;
+  return document.getElementById("game").innerHTML = `Enter! ${vidas} lifes in this number`
 } 
-/////
 
-const borrarLista = () => {
-parag = document.getElementById("link");
-while (parag.hasChildNodes()) {
-  parag.removeChild(parag.firstChild);
+numUserText = document.getElementById("NumText").value.toUpperCase();
+numToCheck  = document.getElementById("NumReal").innerHTML;
+
+if(convertToRoman(numToCheck) === numUserText) {
+  document.getElementById("NumReal").innerHTML = Math.floor(Math.random() * 40) + 1;
+  const numRom = document.createElement("h2") ;
+  numRom.innerHTML = `${convertToRoman(numToCheck)} = ${numToCheck} -- ✓` ;
+  document.getElementById("tabla").appendChild(numRom);
+  vidas = 3;
+  document.getElementById("NumText").value = "";
+  puntos++;
+  totalIntentos--;
+  intentos.innerHTML = `Intentos: ${totalIntentos} - Puntos: ${puntos}`
+} else {
+    if(vidas === 1){
+        vidas = 3;
+        document.getElementById("NumReal").innerHTML = Math.floor(Math.random() * 40) + 1;
+        const numRom = document.createElement("h2") ;
+        numRom.innerHTML = `${convertToRoman(numToCheck)} = ${numToCheck} -- X` ;
+        document.getElementById("tabla").appendChild(numRom);
+        totalIntentos--;
+        intentos.innerHTML = `Intentos: ${totalIntentos} - Puntos: ${puntos}`
+        } else {  vidas = vidas - 1 }
+      //alert(`${vidas} lifes left`}
+  }
+document.getElementById("game").innerHTML = `Enter! ${vidas} lifes in this number`;
 }
-}
-//document.getElementById("link").innerHTML = Math.random(0,1000);
-//const y = document.getElementsByTagName("p");
-//document.getElementById("final").innerHTML = y[0].textContent  ;
+
+
+
+
+
+
 
