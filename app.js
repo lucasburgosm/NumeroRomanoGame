@@ -1,4 +1,4 @@
-import   convertToRoman from './NumRomConverter'
+import  convertToRoman from './NumRomConverter';
 
 let vidas = 3,
     totalIntentos = 10,
