@@ -1,0 +1,16 @@
+:root{
+   --primaryColor: rgb(61, 61, 115);
+   --bodycolor: rgb(111, 111, 132);
+   --expcolor: rgb(255, 255, 255);
+   --marginWeb: 0% 10% 0% 10%;
+}
+
+body {
+    margin: 2% 2% 2% 2%;
+    padding : 2% 2% 2% 2%;
+    background-color: var(--bodycolor);
+    text-align: center;
+    align-items: center;
+}
+
+
